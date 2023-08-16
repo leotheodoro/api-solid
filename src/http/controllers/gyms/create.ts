@@ -19,9 +19,9 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
   const { title, description, phone, latitude, longitude } =
     createGymBodySchema.parse(request.body)
 
-  const registersUseCase = makeCreateGymUseCase()
+  const createGymUseCase = makeCreateGymUseCase()
 
-  await registersUseCase.execute({
+  await createGymUseCase.execute({
     title,
     description,
     phone,
